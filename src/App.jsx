@@ -14,7 +14,7 @@ import "./App.css";
 
 function App() {
   const [leads, setLeads] = useState([]);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", notes: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", notes: "", leadSource: "", typeOfUnit: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +24,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLeads([...leads, form]);
-    setForm({ name: "", email: "", phone: "", notes: "" });
+    setForm({ name: "", email: "", phone: "", notes: "", leadSource: "", typeOfUnit: "" });
   };
 
   return (
@@ -73,6 +73,26 @@ function App() {
                 onChange={handleChange}
               />
             </div>
+            <div className="mb-4">
+              <Input
+                type="text"
+                name="leadSource"
+                placeholder="Lead Source"
+                value={form.leadSource}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <Input
+                type="text"
+                name="typeOfUnit"
+                placeholder="Type of Unit"
+                value={form.typeOfUnit}
+                onChange={handleChange}
+                required
+              />
+            </div>
             <Button type="submit">Add Lead</Button>
           </form>
         </CardContent>
@@ -91,6 +111,8 @@ function App() {
                   <TableHead>Email</TableHead>
                   <TableHead>Phone</TableHead>
                   <TableHead>Notes</TableHead>
+                  <TableHead>Lead Source</TableHead>
+                  <TableHead>Type of Unit</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -100,6 +122,8 @@ function App() {
                     <TableCell>{lead.email}</TableCell>
                     <TableCell>{lead.phone}</TableCell>
                     <TableCell>{lead.notes}</TableCell>
+                    <TableCell>{lead.leadSource}</TableCell>
+                    <TableCell>{lead.typeOfUnit}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
