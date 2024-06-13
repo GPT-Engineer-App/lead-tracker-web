@@ -14,7 +14,7 @@ import "./App.css";
 
 function App() {
   const [leads, setLeads] = useState([]);
-  const [form, setForm] = useState({ name: "", email: "", notes: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", notes: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +24,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLeads([...leads, form]);
-    setForm({ name: "", email: "", notes: "" });
+    setForm({ name: "", email: "", phone: "", notes: "" });
   };
 
   return (
@@ -56,6 +56,16 @@ function App() {
               />
             </div>
             <div className="mb-4">
+              <Input
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-4">
               <Textarea
                 name="notes"
                 placeholder="Notes"
@@ -79,6 +89,7 @@ function App() {
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead>Email</TableHead>
+                  <TableHead>Phone</TableHead>
                   <TableHead>Notes</TableHead>
                 </TableRow>
               </TableHeader>
@@ -87,6 +98,7 @@ function App() {
                   <TableRow key={index}>
                     <TableCell>{lead.name}</TableCell>
                     <TableCell>{lead.email}</TableCell>
+                    <TableCell>{lead.phone}</TableCell>
                     <TableCell>{lead.notes}</TableCell>
                   </TableRow>
                 ))}
