@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto p-4 glassmorphism">
+    <div className="container glassmorphism">
       <Card className="neumorphism">
         <CardHeader>
           <CardTitle className="glow-orange">Add New Lead</CardTitle>
