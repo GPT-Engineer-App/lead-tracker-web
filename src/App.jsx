@@ -28,10 +28,10 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <Card>
+    <div className="container mx-auto p-4 glassmorphism">
+      <Card className="neumorphism">
         <CardHeader>
-          <CardTitle>Add New Lead</CardTitle>
+          <CardTitle className="glow-orange">Add New Lead</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
@@ -93,15 +93,15 @@ function App() {
                 required
               />
             </div>
-            <Button type="submit">Add Lead</Button>
+            <Button type="submit" className="glow-green">Add Lead</Button>
           </form>
         </CardContent>
       </Card>
 
       <div className="mt-8">
-        <Card>
+        <Card className="neumorphism">
           <CardHeader>
-            <CardTitle>Leads</CardTitle>
+            <CardTitle className="glow-orange">Leads</CardTitle>
           </CardHeader>
           <CardContent>
             <Table>
