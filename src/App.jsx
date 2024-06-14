@@ -31,7 +31,7 @@ function App() {
     <div className="container glassmorphism">
       <Card className="neumorphism">
         <CardHeader>
-          <CardTitle className="glow-orange">Add New Lead</CardTitle>
+          <CardTitle className="glow-blue">Add New Lead</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ function App() {
                 required
               />
             </div>
-            <Button type="submit" className="glow-green">Add Lead</Button>
+            <Button type="submit" className="glow-red">Add Lead</Button>
           </form>
         </CardContent>
       </Card>
